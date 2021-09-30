@@ -2,6 +2,7 @@
   <h2>App:{{ $store.state.name }}</h2>
   <router-link to="/login">登录</router-link>
   <router-link to="/home">首页</router-link>
+  <el-button type="primary">按钮</el-button>
   <router-view></router-view>
 </template>
 

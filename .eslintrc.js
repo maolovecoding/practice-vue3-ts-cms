@@ -24,5 +24,7 @@ module.exports = {
     "semi": [0, "never"],
     // 允许箭头函数不使用圆括号
     "arrow-parens": 0,
+    // 使用any类型 不发生警告
+    "@typescript-eslint/no-explicit-any": "OFF"
   },
 };
