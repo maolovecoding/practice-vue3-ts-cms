@@ -630,11 +630,7 @@ module.exports = {
 };
 ```
 
-
-
-
-
-# cms项目
+# cms 项目
 
 ## 配置环境/prod/dev/test
 
@@ -644,18 +640,17 @@ module.exports = {
 
 1. 第一种方式就是将所有的可能都列举出来，然后使用的时候进行注释。
 
-2. 第二种方式：我们可以使用process.env.NODE_ENV这个变量。生产环境下，这个变量的值就是production，开发环境就是development。测试环境就是test。我们在启动项目的时候，可以传这个参数。**npm run serve 就是开发环境，打包的话build就是生产环境了。**
+2. 第二种方式：我们可以使用 process.env.NODE_ENV 这个变量。生产环境下，这个变量的值就是 production，开发环境就是 development。测试环境就是 test。我们在启动项目的时候，可以传这个参数。**npm run serve 就是开发环境，打包的话 build 就是生产环境了。**
 
-3. 通过不同的配置文件进行指定。使用.env.production来指定生产环境的相关配置。其他的环境也类似的使用。但是这个里面的变量只能使用特定的：比如NODE_ENV，BASE_URL等。如果想要个性化的配置变量：需要使用VUE_APP_开头。后面的就任意了。**这是cli提供的功能。**取值的时候在前面加上process.env.变量来获取。
+3. 通过不同的配置文件进行指定。使用.env.production 来指定生产环境的相关配置。其他的环境也类似的使用。但是这个里面的变量只能使用特定的：比如 NODE*ENV，BASE_URL 等。如果想要个性化的配置变量：需要使用 VUE_APP*开头。后面的就任意了。**这是 cli 提供的功能。**取值的时候在前面加上 process.env.变量来获取。
 
    ```js
+
    ```
 
+## axios 封装
 
-
-## axios封装
-
-对axios的拦截器的封装分为三部分：
+对 axios 的拦截器的封装分为三部分：
 
 1. 全局拦截器，对所有的请求全都生效。每一个封装的请求实例都会运用这些拦截器。
 2. 实例拦截器。对我们每个封装的请求实例，都有自己的拦截器。
@@ -666,7 +661,7 @@ module.exports = {
  * @Author: 毛毛
  * @Date: 2021-09-29 21:39:45
  * @Last Modified by: 毛毛
- * @Last Modified time: 2021-09-29 21:40:11
+ * @Last Modified time: 2021-10-03 14:49:23
  */
 
 import type { AxiosRequestConfig, AxiosResponse } from "axios";
@@ -719,7 +714,6 @@ interface MaoRequestConfig extends AxiosRequestConfig {
 }
 
 export { MaoRequestConfig, MaoRequestInterceptor };
-
 ```
 
 ```ts
@@ -827,12 +821,17 @@ export default class MaoRequest {
     );
   }
 }
-
 ```
 
+### ts 的获取类型语法
 
+```ts
+ref<InstanceType<typeof LoginAccount>>
+```
 
+使用这个语法，可以获取导出的 vue 组件的类型。也可以获取其他对象的类型。
 
+vue 单文件 sfc 组件，导出的是一**个对象**（组件的描述）。这个对象并不是实例化过的那种对象，导出的其实是类似于 class 类一样的对某种结构进行了封装。比如我们的 Login.vue 文件，我们在使用的时候 **`<login/>`**这才是这个 vue 组件的实例。根据导出的对象创建出一个真正的组件实例。
 
-
-
+vue 单文件组件导出的是一个描述对象。并不是我们使用泛型时可以传递的类型。
+InstanceType<typeof Login> 可以帮助我们去某个类型里面取到我们拥有构造函数的实例。也就是我们需要的类型。

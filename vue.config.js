@@ -21,6 +21,18 @@ module.exports = {
       }),
     ],
   },
+  // 跨域访问
+  devServer: {
+    proxy: {
+      "^/api": {
+        target: "http://152.136.185.210:5000",
+        pathRewrite: {
+          "^/api": "",
+        },
+        changeOrigin: true,
+      },
+    },
+  },
   // TODO 配置的三种方式 1
   // configureWebpack: {
   //   resolve: {

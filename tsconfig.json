@@ -2,23 +2,34 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
+    // 严格检查 any等
     "strict": true,
+    // 对jsx的处理 保留jsx babel帮我们处理jsx了
     "jsx": "preserve",
+    // 辅助的导入功能
     "importHelpers": true,
+    // 按照node的方式 解析模块
     "moduleResolution": "node",
+    // 跳过对一些第三方库 的类型检测  提高性能
     "skipLibCheck": true,
+    // es模块化和commonjs允许混合使用
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    // 生成映射文件
     "sourceMap": true,
+    // 文件路径在解析时  基本的url
     "baseUrl": ".",
+    // 指定具体要解析使用的类型
     "types": [
       "webpack-env"
     ],
+    // 路径解析 类似于 webpack的alias
     "paths": {
       "@/*": [
         "src/*"
       ]
     },
+    // 可以指定在项目中可以使用那些库中的类型 proxy window scripthost
     "lib": [
       "esnext",
       "dom",

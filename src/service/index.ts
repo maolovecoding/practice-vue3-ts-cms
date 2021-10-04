@@ -2,10 +2,11 @@
  * @Author: 毛毛
  * @Date: 2021-09-29 20:20:40
  * @Last Modified by: 毛毛
- * @Last Modified time: 2021-09-30 00:00:49
+ * @Last Modified time: 2021-10-04 15:40:00
  */
 import MaoRequest from "./request";
 import { BASE_URL, TIME_OUT } from "./request/config";
+import { localCache } from "@/util";
 
 export default new MaoRequest({
   baseURL: BASE_URL,
@@ -13,7 +14,7 @@ export default new MaoRequest({
   // 拦截器
   interceptors: {
     requestInterceptor: (config) => {
-      const token = "";
+      const token = localCache.getCache("token") ?? "";
       // 携带token
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;

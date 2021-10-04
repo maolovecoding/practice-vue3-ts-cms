@@ -1,9 +1,31 @@
 // 类型
 import type { App } from "vue";
-import { ElButton, ElForm } from "element-plus";
+import {
+  ElButton,
+  ElForm,
+  ElTabs,
+  ElTabPane,
+  ElAlert,
+  ElFormItem,
+  ElRadio,
+  ElInput,
+  ElCheckbox,
+  ElLink,
+} from "element-plus";
 import "element-plus/theme-chalk/base.css";
 
-const components = [ElButton, ElForm];
+const components = [
+  ElButton,
+  ElForm,
+  ElTabs,
+  ElTabPane,
+  ElAlert,
+  ElFormItem,
+  ElRadio,
+  ElInput,
+  ElCheckbox,
+  ElLink,
+];
 /**
  * 注册Element-Plus组件等操作
  * @param app
