@@ -21,12 +21,12 @@ module.exports = {
     "@typescript-eslint/no-var-requires": "OFF",
     "@typescript-eslint/no-empty-function": "OFF",
     // 使用分号
-    "semi": [0, "never"],
+    semi: [0, "never"],
     // 允许箭头函数不使用圆括号
     "arrow-parens": 0,
     // 使用any类型 不发生警告
     "@typescript-eslint/no-explicit-any": "OFF",
     // 允许参数使用any类型
-    "@typescript-eslint/explicit-module-boundary-types":"OFF"
+    "@typescript-eslint/explicit-module-boundary-types": "OFF",
   },
 };

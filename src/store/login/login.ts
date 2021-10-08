@@ -1,5 +1,6 @@
 import { Module } from "vuex";
-import { RootState, LoginState } from "../type";
+import { RootState } from "../type";
+import { LoginState } from "./type";
 import {
   accountLoginRequest,
   requestUserInfoById,
@@ -90,7 +91,7 @@ const loginStore: Module<LoginState, RootState> = {
       const userInfo = localCache.getCache("userInfo");
       userInfo && commit("changeUserInfo", userInfo);
       const userMenus = localCache.getCache("userMenus");
-      userMenus && commit("changeUserMenus", userInfo);
+      userMenus && commit("changeUserMenus", userMenus);
     },
     /**
      *

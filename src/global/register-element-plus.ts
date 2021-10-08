@@ -11,6 +11,14 @@ import {
   ElInput,
   ElCheckbox,
   ElLink,
+  ElContainer,
+  ElHeader,
+  ElAside,
+  ElMain,
+  ElMenu,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElSubMenu,
 } from "element-plus";
 import "element-plus/theme-chalk/base.css";
 
@@ -25,6 +33,14 @@ const components = [
   ElInput,
   ElCheckbox,
   ElLink,
+  ElContainer,
+  ElHeader,
+  ElAside,
+  ElMain,
+  ElMenu,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElSubMenu,
 ];
 /**
  * 注册Element-Plus组件等操作

@@ -661,7 +661,7 @@ module.exports = {
  * @Author: 毛毛
  * @Date: 2021-09-29 21:39:45
  * @Last Modified by: 毛毛
- * @Last Modified time: 2021-10-03 14:49:23
+ * @Last Modified time: 2021-10-07 23:27:32
  */
 
 import type { AxiosRequestConfig, AxiosResponse } from "axios";
@@ -835,3 +835,14 @@ vue 单文件 sfc 组件，导出的是一**个对象**（组件的描述）。�
 
 vue 单文件组件导出的是一个描述对象。并不是我们使用泛型时可以传递的类型。
 InstanceType<typeof Login> 可以帮助我们去某个类型里面取到我们拥有构造函数的实例。也就是我们需要的类型。
+
+
+### 使用coderwhy插件
+```shell
+npm i coderwhy -g
+```
+**使用：**
+```shell
+coderwhy add3page 组件名称 -d 位置（文件夹）
+coderwhy add3page User -d src/views/main/system/user
+```
