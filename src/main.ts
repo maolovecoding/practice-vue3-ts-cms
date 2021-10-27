@@ -17,7 +17,8 @@ const app = createApp(App);
 // 注册组件ElementPlus
 app.use(registerElement);
 
+// 刷新页面的操作需要在注册路由之前
+setupStore();
 app.use(router);
 app.use(store);
-setupStore();
 app.mount("#app");

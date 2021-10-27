@@ -19,6 +19,17 @@ import {
   ElMenuItem,
   ElMenuItemGroup,
   ElSubMenu,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElAvatar,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
 } from "element-plus";
 import "element-plus/theme-chalk/base.css";
 
@@ -41,6 +52,17 @@ const components = [
   ElMenuItem,
   ElMenuItemGroup,
   ElSubMenu,
+  ElDropdown,
+  ElDropdownMenu,
+  ElDropdownItem,
+  ElAvatar,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
 ];
 /**
  * 注册Element-Plus组件等操作

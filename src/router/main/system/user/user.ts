@@ -1,6 +1,6 @@
 const User = () => import("@/view/main/system/user/User.vue");
 export default {
-  path: "/view/main/system/user",
+  path: "/main/system/user",
   name: "User",
   component: User,
   children: [],

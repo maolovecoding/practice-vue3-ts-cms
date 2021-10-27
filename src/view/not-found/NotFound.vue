@@ -1,6 +1,6 @@
 <template>
-  <div class="role">
-    <h2>role</h2>
+  <div>
+    <h2>没有该页面。。。。</h2>
   </div>
 </template>
 
@@ -8,11 +8,11 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "Role",
+  name: "NotFound",
   setup() {
     return {};
   },
 });
 </script>
 
-<style scoped lang="less"></style>
+<style scoped></style>

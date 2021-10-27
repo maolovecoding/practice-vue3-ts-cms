@@ -24,7 +24,10 @@
               <span>{{ menu.name }}</span>
             </template>
             <template v-for="subMenu in menu.children" :key="subMenu.id">
-              <el-menu-item :index="subMenu.id + ''">
+              <el-menu-item
+                :index="subMenu.id + ''"
+                @click="handleMenuItemClick(subMenu)"
+              >
                 <i :class="subMenu.icon" v-if="subMenu.icon"></i>
                 <span>{{ subMenu.name }}</span>
               </el-menu-item>
@@ -45,8 +48,10 @@
 
 <script lang="ts">
 import { defineComponent, computed } from "vue";
+import { useRouter } from "vue-router";
 // 自己封装的useStore
 import { useStore } from "@/store";
+import { MenuType } from "../src/type";
 export default defineComponent({
   props: {
     collapse: {
@@ -58,7 +63,15 @@ export default defineComponent({
     const store = useStore();
     // 菜单
     const userMenus = computed(() => store.state.loginStore.userMenus);
-    return { userMenus };
+    // 路由
+    const router = useRouter();
+    // 点击菜单 路由跳转
+    const handleMenuItemClick = (menu: MenuType) => {
+      router.push({
+        path: menu.url ?? "/notfound",
+      });
+    };
+    return { userMenus, handleMenuItemClick };
   },
 });
 </script>

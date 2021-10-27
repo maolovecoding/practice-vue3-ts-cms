@@ -9,6 +9,7 @@ import {
 import { Account } from "../../service/login/type";
 import { localCache } from "@/util/index";
 import router from "@/router";
+import { mapMenusToRoutes } from "@/util/map-menus";
 
 /*
   Module<S, R> s是当前所在的store的state属性的类型
@@ -54,6 +55,13 @@ const loginStore: Module<LoginState, RootState> = {
     changeUserMenus(state, userMenus: any) {
       state.userMenus = userMenus;
       localCache.setCache("userMenus", userMenus);
+      // userMenus ==> routes
+      const routes = mapMenusToRoutes(userMenus);
+      // 将 routes 添加到 router.main.children 里面 动态注册
+      routes.forEach((route) => {
+        // 使用全局的路由对象，来动态注册我们拥有的权限的路由
+        router.addRoute("main", route);
+      });
     },
   },
   actions: {

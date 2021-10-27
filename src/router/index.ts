@@ -10,13 +10,25 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: "/login",
+    name: "login",
     component: () =>
       import(/* webpackChunkName:"chunk-login" */ "@/view/login/Login.vue"),
   },
   {
     path: "/main",
+    name: "main",
     component: () =>
       import(/* webpackChunkName:"chunk-home" */ "@/view/main/Main.vue"),
+    // 动态添加子菜单
+    // children: [], ==》 根据userMenus来决定动态渲染的组件和注册路由
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "notfound",
+    component: () =>
+      import(
+        /* webpackChunkName:"chunk-NotFound" */ "@/view/not-found/NotFound.vue"
+      ),
   },
 ];
 
